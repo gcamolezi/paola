@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8c6d3; /* Rosa claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #333;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.envelope {
+    width: 500px;
+    height: 350px;
+    position: relative;
+    background-color: #00000056; /* Envelope branco */
+    border: 3px solid #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: rotateX(45deg);
+    transition: all 1s ease;
+}
+
+.top-flap,
+.bottom-flap {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: #ffffff;
+    transition: all 1s ease;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.top-flap {
+    top: 0;
+    transform-origin: top;
+}
+
+.bottom-flap {
+    bottom: 0;
+    transform-origin: bottom;
+    transform: rotateX(180deg);
+}
+
+.envelope-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+button {
+    background-color: #ff4b5c;
+    color: white;
+    font-size: 1.4rem; /* Aumentado */
+    padding: 16px 40px; /* Aumentado */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 1.0 ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.invitation-message {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+    animation: fadeIn 1s ease 1s;
+}
+
+.invitation-message h1 {
+    font-size: 2.5rem; /* Aumentado */
+    margin-bottom: 100px; /* Aumentado */
+    animation: fadeIn 1s ease;
+}
+
+.invitation-message p {
+    position: relative; /* Adiciona posição relativa ao parágrafo */
+    top: 30px;  /* Ajuste para mover para baixo */
+    left: 0;    /* Não muda a posição horizontal, mas você pode ajustar */
+    margin-top: 13px; /* Se quiser mais controle sobre o espaço */
+}
+
+
+
+
+.hearts {
+    position: absolute;
+    top: 170%;
+    left: -20%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.hearts .heart {
+    position: absolute;
+    font-size: 40px; /* Aumentado */
+    animation: float 2s infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+    }
+}
